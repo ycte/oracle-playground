@@ -10,6 +10,6 @@ public class UserController {
 
     @RequestMapping(path = "/getUser", method = RequestMethod.GET)
     public String getUser() {
-
+        return "hhh";
     }
 }
