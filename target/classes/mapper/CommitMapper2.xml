@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.op.mapper.CommitMapper2">
+<!--    <resultMap id="commitMapper2" type="com.op.model.CommitVO">-->
+<!--        <result property="username" column="username"/>-->
+<!--        <result property="userAge" column="age"/>-->
+<!--        <result property="id" column="id"/>-->
+<!--        <result property="blogId" column="blog_id"/>-->
+<!--        <result property="userId" column="user_id"/>-->
+<!--        <result property="text" column="text"/>-->
+<!--        <result property="created" column="created"/>-->
+<!--        <result property="status" column="status"/>-->
+<!--    </resultMap>-->
+    <select id="findPage" resultMap="com.op.model.CommitVO">
+        select c.id, c.blog_id, c.user_id, c.text, c.created, c.status, u.username from m_commit as c left join m_user as u on c.user_id = u.id;
+    </select>
+</mapper>
